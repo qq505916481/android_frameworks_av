@@ -628,6 +628,9 @@ const uint8_t *SoftVideoEncoderOMXComponent::extractGraphicBuffer(
         case HAL_PIXEL_FORMAT_RGBX_8888:
         case HAL_PIXEL_FORMAT_RGBA_8888:
         case HAL_PIXEL_FORMAT_BGRA_8888:
+#ifdef MTK_HARDWARE
+        case HAL_PIXEL_FORMAT_RGBX_8888:
+#endif
             ConvertRGB32ToPlanar(
                     dst, dstStride, dstVStride,
                     (const uint8_t *)bits, width, height, srcStride,
